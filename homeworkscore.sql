@@ -1,4 +1,4 @@
-create database homeworkscore; /*id = root*/ 
+create database homeworkscore;
 use homeworkscore;
 create table yes (
 	namw	char(32)	character set utf8,
@@ -12,5 +12,3 @@ create table yes (
     adult1year 	int(10),
     total       int(10)
 );
-
-/* INSERT INTO yes VALUES ('jasseung',0,1,2,3,4,5,6,7,8); <- how to save db */

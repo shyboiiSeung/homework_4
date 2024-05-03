@@ -25,7 +25,7 @@ $_GET['order'] = isset($order) ? $_GET['order'] : null;
 </head>
 <body>
     <div class="input-wrap">
-        <form action="homework4.php" method="POST">
+        <form action="homework 4.php" method="POST">
         <div>    
         <p>고객성명 <input type="placeholder" name="namw" size="9">
         <input type="submit" name="submit" value="submit"></p>
@@ -125,7 +125,7 @@ $_GET['order'] = isset($order) ? $_GET['order'] : null;
                 <?php
                     if (isset($_POST['namw']) && strlen($_POST['namw']) > 0) {
                         if (isset($_POST['submit']) && $_POST['submit'] == "submit" ) {
-                            $total = 0;
+                            $total = 0; // total 변수 연산
                             $total += $_POST['childticket']*7000;
                             $total += $_POST['childbig3']*12000;
                             $total += $_POST['childfree']*21000;
@@ -134,7 +134,7 @@ $_GET['order'] = isset($order) ? $_GET['order'] : null;
                             $total += $_POST['adultbig3']*16000;
                             $total += $_POST['adultfree']*26000;
                             $total += $_POST['adult1year']*90000;
-                            $sql =" INSERT INTO  `yes` ".    //yes -> table name
+                            $sql =" INSERT INTO  `yes` ". 
                             "(`namw` , `childticket` , `adultticket` , `childbig3` , `adultbig3` , `childfree` , `adultfree` , `child1year`, `adult1year`, `total`)".
                             "VALUES ('$_POST[namw]',  '$_POST[childticket]',  '$_POST[adultticket]',  '$_POST[childbig3]',  '$_POST[adultbig3]',  '$_POST[childfree]', 
                                      '$_POST[adultfree]', '$_POST[child1year]', '$_POST[adult1year]','$total')";
@@ -171,7 +171,7 @@ $_GET['order'] = isset($order) ? $_GET['order'] : null;
                         mysqli_query($link,$sql);
                     }
                     else {
-                        echo"성명을 입력해 주세요";
+                        echo"성명을 입력해 주세요"; // 성명을 입력하지 않을시 출력되는 말 (코드 작동 x)
                     }
                 ?>
     </div>
